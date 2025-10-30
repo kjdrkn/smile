@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Red Overlay + Pulsing Lights</title>
+<style>
+body {
+  background: #ccc;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image-wrapper img {
+  display: block;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.red-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  border-radius: 10px;
+  opacity: 0.5;
+  animation: redPulse 2s ease-in-out infinite alternate;
+}
+
+.light1 {
+  position: absolute;
+  top: 167px;
+  left: 122px;
+  width: 20px;
+  height: 13px;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: pulse 0.15s ease-in-out infinite;
+}
+
+.light2 {
+  position: absolute;
+  top: 171px;
+  left: 191px;
+  width: 20px;
+  height: 13px;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: pulse 0.15s ease-in-out infinite;
+animation: pulse 0.15s ease-in-out infinite;
+  animation-delay: 0.075s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 1;
+  }
+}
+
+@keyframes redPulse {
+  0% { opacity: 10%; }
+  100% { opacity: 40%; }
+}
+</style>
+</head>
+<body>
+
+<div class="image-wrapper">
+  <img src="friend.png" alt="サンプル画像">
+  <div class="red-overlay"></div>
+  <div class="light1"></div>
+  <div class="light2"></div>
+</div>
+
+</body>
+</html>
